@@ -1,0 +1,12 @@
+>>vi myscript.sh
+
+#!/bin/bash
+read -p "please enter the user name:" USER_NAME
+echo $USER_NAME
+read -p "please enter the password:" PASSWORD
+useradd -m $USER_NAME
+echo "$USER_NAME:$PASSWORD" | sudo chpasswd
+
+:wq
+
+>>bash myscript.sh              -->it will execute the command and ask the username and password
