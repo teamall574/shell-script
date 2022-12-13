@@ -10,3 +10,19 @@ aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro
 done
 
 >>bash vol.sh  2 4 6 ##-->it will create the volumes 3gb 4gb and 5gb
+
+===
+if you give $* also same like $@ 
+
+vi vol.sh
+
+#!/bin/bash
+echo $*
+for VOL in $*
+do
+echo "Creating the Volumes..."
+aws ec2 create-volume --volume-type gp2 --size 1 --availabilty-zone ap-south-1a --tag-speccification 'ResourceType=volume,Tags=[{key=Name,Value=PRODVOL}]' 
+aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e
+done
+
+>>bash vol.sh  2 4 6 ##-->it will create the volumes 3gb 4gb and 5gb  
