@@ -9,4 +9,4 @@ echo "$USER_NAME:$PASSWORD" | sudo chpasswd
 
 :wq
 
->>bash myscript.sh              -->it will execute the command and ask the username and password
+>>bash myscript.sh              #-->it will execute the command and ask the username and password
