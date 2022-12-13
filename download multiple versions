@@ -1,0 +1,24 @@
+=====
+ec2-user
+sudo su -
+vi version
+
+0.12.25
+0.12.26
+0.12.27
+0.12.28
+0.12.29
+
+:wq
+
+vi versi.sh
+
+#!/bin/bash
+for ver in $(cat version)
+do 
+wget https://releases.hasicorp.com/terraform/${ver}/terraform_${ver}_linux_amd64.zip
+ls -al | grep -i terraform
+sleep 5
+done
+
+>>bash versi.sh      ##-->it will download the versiob file using download the versions
