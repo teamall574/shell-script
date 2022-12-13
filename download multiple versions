@@ -22,3 +22,18 @@ sleep 5
 done
 
 >>bash versi.sh      ##-->it will download the versiob file using download the versions
+
+=========== 2nd type
+
+vi versi.sh
+
+#!/bin/bash
+for ver in $(cat version)
+do 
+PACKAGE=$(echo "https://releases.hasicorp.com/terraform/0.12.25/terraform_0.12.25_linux_amd64.zip
+wget $PACKAGE
+ls -al | grep -i terraform
+sleep 5
+done
+
+>>bash versi.sh      ##-->it will download the versiob file using download the versions
