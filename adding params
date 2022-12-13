@@ -1,0 +1,14 @@
+vi par.sh
+
+#!/bin/bash
+echo "No of params Entered is $#"
+if [ $# -gt 3 ]
+then
+echo "please Enter Max of 3, but you have entered $#"
+else
+echo "You have Entered $#"
+fi
+
+:wq
+
+>>bash par.sh          ##-->it will create the params only there if you enter 4 then it will you should eneter only 3
