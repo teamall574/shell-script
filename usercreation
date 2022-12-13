@@ -20,20 +20,42 @@ echo "$USER_NAME:$PASSWORD" | sudo chpasswd
 read -p "please enter the user name:" USER_NAME
 echo $USER_NAME
 if [ -z "$USER_NAME" ]; then
-echo "its not a valid user $USER_NAME"
+    echo "its not a valid user $USER_NAME"
 else 
-echo "the username is $USER_NAME"
-EX_USER=$(cat /etc/passwd | cut -d ":" -f 1 | grep -w $USER_NAME)
-if [ "$USER_NAME" = "EX_USER" ]
-echo "user $USER_NAME exists. please select differnet username.."
-else
-echo "lest create user $USER_NAME"
-read -s -p "please enter the passowrd:" PASSWORD
-useradd -m $USER_NAME
-echo "$USER_NAME:$PASSWORD" | sudo chpasswd
-fi
+    echo "the username is $USER_NAME"
+    EX_USER=$(cat /etc/passwd | cut -d ":" -f 1 | grep -w $USER_NAME)
+    if [ "$USER_NAME" = "EX_USER" ]; then
+        echo "user $USER_NAME exists. please select a differnet username.."
+    else
+        echo "lets create user $USER_NAME"
+        read -s -p "please enter the password:" PASSWORD
+        useradd -m $USER_NAME
+        echo "$USER_NAME:$PASSWORD" | sudo chpasswd
+    fi
 fi
 
 :wq
 
 >>bash users.sh   ##-->it will execute the command and if user exist then it will give an error if not then create an user and create the password of user
+
+>>vi user.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
