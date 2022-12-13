@@ -1,0 +1,16 @@
+vi download.sh
+
+#!/bin/bash
+read -p "Enter The URL:" URL
+wget $URL
+if [ $? -eq 0 ]
+then
+echo "file download successfully"
+ls -al
+else
+echo "invalid url"
+fi 
+
+:wq
+
+>>bash download.sh      ##-->it will ask the url then download the file into your system display the files
